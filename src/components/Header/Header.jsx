@@ -4,17 +4,21 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
 
     const links = <>
-         <li><NavLink to='/'>Home</NavLink></li>
-         <li><NavLink to='/jobs'>Jobs</NavLink></li>
-         <li><NavLink to='/applied'>Applied jobs</NavLink></li>
-         <li><NavLink to='/blogs'>Blogs</NavLink></li>
+         <li><NavLink to='/' 
+         className={({ isActive }) => (isActive ? 'bg-cyan-400' : 'undefined')}>Home</NavLink></li>
+         <li><NavLink to='/jobs'
+         className={({ isActive }) => (isActive ? 'bg-cyan-400' : 'undefined')}>Jobs</NavLink></li>
+         <li><NavLink to='/applied'
+         className={({ isActive }) => (isActive ? 'bg-cyan-400' : 'undefined')}>Applied jobs</NavLink></li>
+         <li><NavLink to='/blogs'
+         className={({ isActive }) => (isActive ? 'bg-cyan-400' : 'undefined')}>Blogs</NavLink></li>
     </>
 
     return (
         <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+      <div tabIndex={0} role="button" className=" lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="h-5 w-5"
@@ -34,15 +38,16 @@ const Header = () => {
         {links}
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+    <a className="text-3xl">Career Hub</a>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
+    <ul className="menu menu-horizontal px-2">
       {links}
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">Button</a>
+    <a className="btn bg-cyan-400 hover:bg-cyan-200">Apply  Now</a>
+
   </div>
 </div>
     );
