@@ -17,7 +17,7 @@ const Job = ({job}) => {
             <button className="px-5 py-2 mr-4 font-extrabold border rounded border-[#22d3ee] text-[#22d3ee]">{remote_or_onsite}</button>
             <button className="px-5 py-2 mr-4 font-extrabold border rounded border-[#22d3ee] text-[#22d3ee]">{job_type}</button>
           </div>
-          <div className="flex gap-5">
+          <div className="flex gap-5 mt-2">
             <div className="flex">
               <CiLocationOn size={20} className="text-cyan-400" />
               <p>{location}</p>
