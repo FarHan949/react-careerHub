@@ -1,4 +1,5 @@
-
+import { CiLocationOn } from "react-icons/ci";
+import { MdOutlineAttachMoney } from "react-icons/md"
 
 const Job = ({job}) => {
 
@@ -15,6 +16,16 @@ const Job = ({job}) => {
           <div className="text-left">
             <button className="px-5 py-2 mr-4 font-extrabold border rounded border-[#22d3ee] text-[#22d3ee]">{remote_or_onsite}</button>
             <button className="px-5 py-2 mr-4 font-extrabold border rounded border-[#22d3ee] text-[#22d3ee]">{job_type}</button>
+          </div>
+          <div className="flex gap-5">
+            <div className="flex">
+              <CiLocationOn size={20} className="text-cyan-400" />
+              <p>{location}</p>
+            </div>
+            <div className="flex">        
+              <MdOutlineAttachMoney size={20} className="text-cyan-400"></MdOutlineAttachMoney>     
+              <p>{salary}</p>
+            </div>
           </div>
           <div className="card-actions">
             <button className="btn bg-[#22d3ee] hover:bg-cyan-300">View Details</button>
