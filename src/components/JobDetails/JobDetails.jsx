@@ -3,8 +3,11 @@ import { RiHandbagFill } from "react-icons/ri"
 import { FiPhone } from "react-icons/fi"
 import { CiLocationOn } from "react-icons/ci"
 import { useLoaderData, useParams } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import bg1 from '../../../public/bg-img/bg1.png'
 import bg2 from '../../../public/bg-img/bg2.png'
+import { saveJobApplication } from "../../utility/localStorage";
 
 const JobDetails = () => {
     
@@ -15,8 +18,13 @@ const JobDetails = () => {
     
     const {job_description, job_responsibility, educational_requirements, experiences, salary, job_title, 
         location, contact_information} = job
+        // console.log(id, job)
 
-        console.log(id, job)
+        const handelApplyJob  = () => {
+            saveJobApplication(parseInt(id))
+            toast.success('Job Applied Successfully',)  
+           } 
+
 
 
     return (
@@ -92,9 +100,10 @@ const JobDetails = () => {
                            </div>
                            
                       </div>
-                      <div className="btn bg-cyan-400 w-full mt-5">Apply Now</div>                    
+                      <div onClick={handelApplyJob} className="btn bg-cyan-400 w-full mt-5">Apply Now</div>                    
                 </div>
               </div>
+              <ToastContainer />
         </div>
     );
 };

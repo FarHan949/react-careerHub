@@ -17,9 +17,9 @@ const FeaturedJobs = () => {
 
     return (
         <div>
-            <div className='text-center'>
-                  <h2 className='text-5xl'>Featured Job {jobs.length}</h2>
-                  <p>Explore thousands of job opportunities with all the information you need. Its your future</p>
+            <div className='text-center mt-20'>
+                  <h2 className='text-5xl font-bold'>Featured Jobs</h2>
+                  <p className='mt-5 text-slate-600'>Explore thousands of job opportunities with all the information you need. Its your future</p>
                   <div className='md:grid grid-cols-2 gap-6 mb-6 mt-6 max-w-4xl mx-auto'>
                   {
                     jobs.slice(0, dataLength).map(job => <Job key={job.id} job={job}></Job> )

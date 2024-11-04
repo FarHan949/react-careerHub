@@ -4,7 +4,16 @@ import { Link } from "react-router-dom";
 
 const Job = ({job}) => {
 
-  const {id, logo, job_title, company_name, remote_or_onsite, location, job_type, salary} = job
+  const {
+    id, 
+    logo, 
+    job_title, 
+    company_name, 
+    remote_or_onsite, 
+    location, 
+    job_type, 
+    salary
+  } = job;
 
     return (
         <div className="card card-compact bg-base-100 shadow-xl">
