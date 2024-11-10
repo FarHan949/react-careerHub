@@ -25,7 +25,7 @@ const JobDetails = () => {
             toast.success('Job Applied Successfully',)  
            } 
 
-
+     
 
     return (
         <div>
