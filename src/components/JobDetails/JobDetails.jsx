@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import bg1 from '../../../public/bg-img/bg1.png'
 import bg2 from '../../../public/bg-img/bg2.png'
 import { saveJobApplication } from "../../utility/localStorage";
+import { Helmet } from "react-helmet-async";
 
 const JobDetails = () => {
     
@@ -17,8 +18,7 @@ const JobDetails = () => {
     const job = jobs.find( job =>  job.id === parseInt(id))
     
     const {job_description, job_responsibility, educational_requirements, experiences, salary, job_title, 
-        location, contact_information} = job
-        // console.log(id, job)
+         contact_information} = job
 
         const handelApplyJob  = () => {
             saveJobApplication(parseInt(id))
@@ -29,6 +29,9 @@ const JobDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Career Hub | {job_title}</title>
+            </Helmet>
               <div className='w-full bg-slate-100 flex justify-between rounded-xl items-center'>
               <img src={bg1} className='w-1/4' alt="" />
               <h2 className='text-2xl font-bold'>Job Details</h2>

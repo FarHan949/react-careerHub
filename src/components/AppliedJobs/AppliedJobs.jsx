@@ -4,6 +4,7 @@ import { getStoreJobApplication } from '../../utility/localStorage';
 import bg1 from '../../../public/bg-img/bg1.png'
 import bg2 from '../../../public/bg-img/bg2.png'
 import AppliedJob from '../AppliedJob/AppliedJob';
+import { Helmet } from 'react-helmet-async';
 
 const AppliedJobs = () => {
     
@@ -44,6 +45,9 @@ const AppliedJobs = () => {
   
     return (
         <div>
+            <Helmet>
+                <title>Career Hub | Applied Jobs</title>
+            </Helmet>
             <div className='w-full bg-slate-100 flex justify-between rounded-xl items-center'>
               <img src={bg1} className='w-1/4' alt="" />
               <h2 className='text-2xl font-bold'>Applied Jobs</h2>

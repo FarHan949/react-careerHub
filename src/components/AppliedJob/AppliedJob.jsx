@@ -1,12 +1,11 @@
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineAttachMoney } from "react-icons/md"
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-
-// const navigate = useNavigate();
 
 const AppliedJob = ({appliedJob}) => {
   const {
+      id,
       logo, 
       salary, 
       location, 
@@ -15,10 +14,6 @@ const AppliedJob = ({appliedJob}) => {
       company_name, 
       remote_or_onsite, 
       } = appliedJob
-
-   const handelTONavigate=()=>{
-           navigate(`/`)
-       }
 
     return (
         <div className='flex justify-between m-5 border items-center p-5'>
@@ -45,9 +40,9 @@ const AppliedJob = ({appliedJob}) => {
                       </div>
                   </div>
                   
-            <button 
-            // onClick={handelTONavigate}
-             className="btn bg-[#22d3ee] hover:bg-cyan-300">View Details</button>
+                  <Link to={`/job/${id}`}>
+            <button className="btn bg-[#22d3ee] hover:bg-cyan-300">View Details</button>
+                  </Link>
             
         </div>
     );
